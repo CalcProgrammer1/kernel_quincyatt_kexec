@@ -23,7 +23,7 @@ find . -print | cpio -H newc -o | gzip -9 > ../ramdisk.cpio.gz
 cd ..
 
 # make the boot image
-mkbootimg --kernel kernel_cm/arch/arm/boot/zImage --ramdisk ramdisk.cpio.gz --base 0x48000000 --ramdiskaddr 0x49600000 --cmdline 'androidboot.hardware=qcom usb_id_pin_rework=true zcache' -o new_boot.img
+mkbootimg --kernel kernel/arch/arm/boot/zImage --ramdisk ramdisk.cpio.gz --base 0x48000000 --ramdiskaddr 0x49600000 --cmdline 'androidboot.hardware=qcom usb_id_pin_rework=true zcache' -o new_boot.img
 
 # copy the boot image into the zip root
 mv new_boot.img kernel-zip/boot.img
