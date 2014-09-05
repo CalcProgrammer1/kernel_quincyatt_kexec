@@ -30,4 +30,4 @@ mv new_boot.img kernel-zip/boot.img
 
 # create the zip
 cd kernel-zip
-zip -r ../kernel_kexecboot.zip *
+zip -r ../kernel_kexecboot_quincyatt.zip *
