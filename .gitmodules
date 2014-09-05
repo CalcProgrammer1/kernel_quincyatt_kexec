@@ -1,0 +1,6 @@
+[submodule "kernel"]
+	path = kernel
+	url = https://github.com/CalcProgrammer1/android_kernel_samsung_msm8660-common
+[submodule "kexecboot"]
+	path = kexecboot
+	url = https://github.com/CalcProgrammer1/kexecboot

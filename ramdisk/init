@@ -1,0 +1,38 @@
+#!/bin/sh
+# -*- mode: shell-script; coding: utf-8-emacs-unix; sh-basic-offset: 8; indent-tabs-mode: t -*-
+# This code is under Simplified BSD License, see LICENSE for more info
+# Copyright (c) 2010, Piotr Karbowski
+# All rights reserved.
+#
+# This code is taken from https://github.com/slashbeast/better-initramfs
+# and stripped down (by Arch Linux ARM) to the be tiny and easy to read.
+#
+# From then it was taken by CalcProgrammer1 and modified to boot Ubuntu on an SGH-I717!
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+/bin/busybox --install -s
+
+echo '[init] Mounting virtual filesystems'
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t tmpfs -o nosuid,relatime,size=10240k,mode=755 dev /dev
+
+echo '[init] Starting refresh'
+/usr/sbin/refresh &
+
+echo '[init] Starting hotplug'
+touch /etc/mdev.conf
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+echo '[init] Starting LVM'
+rm -rf /etc/lvm/cache
+lvm vgchange -a y
+sleep 5
+lvm vgmknodes
+
+echo '[init] Launching kexecboot'
+kexecboot
+
+echo '[init] Dropping to shell'
+ash

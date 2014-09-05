@@ -1,0 +1,63 @@
+ui_print("");
+ui_print("");
+ui_print("Ubuntu Kernel for Galaxy Note i717");
+ui_print("");
+ui_print("");
+
+#ui_print("Mounting system partition");
+#ifelse(is_mounted("/system") == "/system", unmount("/system"));
+#mount("ext4", "EMMC", "/dev/block/mmcblk0p24", "/system");
+#show_progress(0.250000, 0);
+#ui_print("");
+
+#ui_print("Removing old kernel files...");
+#delete_recursive("/system/etc/init.d");
+
+#ui_print("Extracting system");
+#assert(package_extract_dir("system", "/system"));
+#assert(package_extract_dir("scripts", "/tmp"));
+#set_perm_recursive(0, 0, 0755, 0644, "/system/lib/modules");
+#set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d");
+#set_perm(0, 0, 0755, "/system/etc/init.d");
+#set_perm_recursive(0, 0, 0755, 0555, "/system/etc/init.d");
+#ui_print("");
+
+#ui_print("Injecting Buildprop Tweaks");
+#set_perm(0, 0, 0755, "/tmp/add_to_buildprop.sh");
+#run_program("/tmp/add_to_buildprop.sh");
+
+ui_print("Extracting Kernel");
+assert(package_extract_file("boot.img", "/tmp/boot.img"),
+write_raw_image("tmp/boot.img", "/dev/block/mmcblk0p8"));
+ui_print("");
+
+#ui_print("Mixing up Files DJ Style");
+#set_perm(0, 0, 0777, "/tmp/install.sh");
+#assert(run_program("/tmp/install.sh"));
+#ui_print("");
+
+ui_print("Remove temp files");
+#delete("/tmp/install.sh");
+#delete("/tmp/add_to_buildprop.sh");
+delete("/tmp/boot.img");
+show_progress(0.250000, 0);
+ui_print("");
+
+#ui_print("Deleting Cache and Dalvik");
+#delete_recursive("/cache");
+#show_progress(0.250000, 0);
+#delete_recursive("/data/cache");
+#ui_print("");
+
+#ui_print("Fixing permissions be patient...");
+#set_perm(0, 0, 0755, "/tmp/fix_permissions.sh");
+#ui_print("Still Fixing Permissions Dont Panic!");
+#run_program("/tmp/fix_permissions.sh");
+#delete("/tmp/fix_permissions.sh");
+#ui_print("");
+
+#ui_print("Unmounting partitions");
+#unmount("/system");
+#ui_print("");
+
+ui_print("Your Kernel is now AWESOME!!!");

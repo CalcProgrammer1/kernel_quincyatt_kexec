@@ -1,0 +1,81 @@
+Manifest-Version: 1.0
+Created-By: 1.6.0_34 (Sun Microsystems Inc.)
+
+Name: system/lib/modules/sch_dsmark.ko
+SHA1-Digest: FTFdE2foXCozQhoBhZ5jnA9AXRU=
+
+Name: boot.img
+SHA1-Digest: Ds81OShiqNx5mQ5ocRpHCZEi8sM=
+
+Name: system/lib/modules/ksapi.ko
+SHA1-Digest: QSte738XFjiSPoKz5UgJrZuFaSw=
+
+Name: system/lib/modules/lcd.ko
+SHA1-Digest: vb+PSlbUdnJtRVUII1XDKGcnfy4=
+
+Name: system/lib/modules/frandom.ko
+SHA1-Digest: TqNQxibbC+GbWz6fb/F9LmzIXo4=
+
+Name: system/lib/modules/tsif_chrdev.ko
+SHA1-Digest: TB++wh3MTdoFu0WYEQntNl1Wf6M=
+
+Name: system/lib/modules/evbug.ko
+SHA1-Digest: 30PUpxMLJiLEv4SufY6IUp4cbtc=
+
+Name: kernel/binprep.sh
+SHA1-Digest: mHAehRMEY0AuTEFyK24ijvOkvyg=
+
+Name: system/lib/modules/qce.ko
+SHA1-Digest: g8ryQUtvaydPsVuLo7vat+oA5go=
+
+Name: system/lib/modules/vibrator.ko
+SHA1-Digest: Sz7XnBZEvt18V0haDE0fkJQfx7I=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: ulQTznd+kb5D1GO+iFCDr7dfHI8=
+
+Name: system/lib/modules/qcedev.ko
+SHA1-Digest: UOud9+n0D+tNAjI5Xo08Dfc1cZM=
+
+Name: system/lib/modules/scsi_wait_scan.ko
+SHA1-Digest: +6JelPKYQ9Ffo3IGJcllnkliJl8=
+
+Name: system/lib/modules/dal_remotetest.ko
+SHA1-Digest: C64jnL9gCM8ELcT0jY8O0eGHYTU=
+
+Name: system/lib/modules/ansi_cprng.ko
+SHA1-Digest: NCtIUeoVq+roW3WrwlEkU0PCGzw=
+
+Name: system/lib/modules/cls_flow.ko
+SHA1-Digest: 1mynFRJqEzH6x3kIYN6I51MODY8=
+
+Name: system/lib/modules/msm-buspm-dev.ko
+SHA1-Digest: 4YYuqOdiK3yYigYAAyv8LSmEvSI=
+
+Name: system/lib/modules/gspca_main.ko
+SHA1-Digest: lP0aswU+s09bnOI8oGoCobTmWD8=
+
+Name: system/lib/modules/qcrypto.ko
+SHA1-Digest: ORdBlIzoWucmvCkf4Gl18LFrIts=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: hg3TCm/NWBwt86gIi0DlcbC8P54=
+
+Name: system/app/KernelTuner.apk
+SHA1-Digest: K6uXJaHfD+2v7fWzueN8hfz//Yc=
+
+Name: system/lib/modules/mmc_test.ko
+SHA1-Digest: xMq/HZ19jaNqfzjW9LNstnZeGV0=
+
+Name: system/lib/modules/dma_test.ko
+SHA1-Digest: qnA7ityN1AIaIlSh0hhYfip7mlU=
+
+Name: system/lib/modules/msm_tsif.ko
+SHA1-Digest: v+gYc4Q1QyiWY4im22pTnDOpWNE=
+
+Name: system/lib/modules/spidev.ko
+SHA1-Digest: ZAhuDhcBSGtCuOp2CLrY5b3wT0A=
+
+Name: system/lib/modules/dhd.ko
+SHA1-Digest: lhb9L7aXjXK3NLuDz/6t3Y6PjSA=
+
